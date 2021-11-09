@@ -1,0 +1,81 @@
+{
+  "compatibleVersion": 3,
+  "bundleVersion": 1,
+  "name": "sketch-plugin-demo",
+  "description": "sketch插件示例，包括sketch元素的操作、侧边工具栏、WebView等",
+  "author": "chenmenglan<1447340425@qq.com>",
+  "commands": [
+    {
+      "name": "Actions",
+      "identifier": "sketch-plugin-demo.actions",
+      "script": "./actions.js",
+      "handlers": {
+        "actions": {
+          "SelectionChanged": "onSelectionChanged",
+          "StartUp": "onStartUp",
+          "Shutdown": "onShutdown"
+        }
+      }
+    },
+    {
+      "name": "获取选中图层中的文本",
+      "identifier": "sketch-plugin-demo.get-selected-text",
+      "script": "./getSelectedText.js",
+      "shortcut": "ctrl shift s",
+      "handlers": {
+        "run": "onRun",
+        "actions": {
+          "OpenDocument": "onOpenDocument"
+        }
+      }
+    },
+    {
+      "name": "生成随机色",
+      "identifier": "sketch-plugin-demo.generate-random-color",
+      "script": "./generateColor.js",
+      "shortcut": "ctrl shift r",
+      "handlers": {
+        "run": "onRun",
+        "actions": {
+          "OpenDocument": "onOpenDocument"
+        }
+      }
+    },
+    {
+      "name": "显示WebView",
+      "identifier": "sketch-plugin-demo.show-webview",
+      "script": "./showWebview.js",
+      "shortcut": "ctrl shift w",
+      "handlers": {
+        "run": "onRun",
+        "actions": {
+          "OpenDocument": "onOpenDocument",
+          "Shutdown": "onShutdown"
+        }
+      }
+    },
+    {
+      "name": "显示Toolbar",
+      "identifier": "sketch-plugin-demo.show-toolbar",
+      "script": "./showToolbar.js",
+      "shortcut": "ctrl shift t",
+      "handlers": {
+        "run": "onRun",
+        "actions": {
+          "OpenDocument": "onOpenDocument",
+          "CloseDocument": "onCloseDocument",
+          "Shutdown": "onShutdown"
+        }
+      }
+    }
+  ],
+  "menu": {
+    "title": "sketch-plugin-demo",
+    "items": [
+      "sketch-plugin-demo.get-selected-text",
+      "sketch-plugin-demo.generate-random-color",
+      "sketch-plugin-demo.show-webview",
+      "sketch-plugin-demo.show-toolbar"
+    ]
+  }
+}

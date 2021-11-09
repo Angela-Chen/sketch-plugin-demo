@@ -1,0 +1,39 @@
+{
+  "name": "sketch-plugin-demo",
+  "description": "sketch插件示例，包括sketch元素的操作、侧边工具栏、WebView等",
+  "version": "0.1.0",
+  "engines": {
+    "sketch": ">=3.0"
+  },
+  "skpm": {
+    "name": "sketch-plugin-demo",
+    "manifest": "src/manifest.json",
+    "main": "sketch-plugin-demo.sketchplugin",
+    "assets": [
+      "assets/**/*"
+    ],
+    "sketch-assets-file": "sketch-assets/icons.sketch"
+  },
+  "scripts": {
+    "dev": "skpm-build --watch && --output '../../../../Library/Application Support/com.bohemiancoding.sketch3/Plugins/hotwheels.sketchplugin'",
+    "reload": "rimraf '../../../../Library/Application Support/com.bohemiancoding.sketch3/Plugins/sketch-plugin-demo.sketchplugin' && skpm-build --output '../../../../Library/Application Support/com.bohemiancoding.sketch3/Plugins/sketch-plugin-demo.sketchplugin'",
+    "watch": "skpm-build --watch",
+    "start": "skpm-build --watch",
+    "build": "skpm-build",
+    "postinstall": "npm run build && skpm-link"
+  },
+  "devDependencies": {
+    "@skpm/builder": "^0.7.4",
+    "@skpm/extract-loader": "^2.0.2",
+    "css-loader": "^3.2.0",
+    "html-loader": "^0.5.5"
+  },
+  "resources": [
+    "resources/**/*.js"
+  ],
+  "dependencies": {
+    "mockjs": "^1.1.0",
+    "sketch-module-web-view": "^3.1.4"
+  },
+  "author": "chenmenglan<1447340425@qq.com>"
+}
