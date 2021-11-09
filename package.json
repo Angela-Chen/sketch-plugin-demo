@@ -1,6 +1,6 @@
 {
   "name": "sketch-plugin-demo",
-  "description": "sketch插件示例，包括sketch元素的操作、侧边工具栏、WebView等",
+  "description": "sketch插件示例，包括操作sketch元素、基于Umi+Antd开发WebView等",
   "version": "0.1.0",
   "engines": {
     "sketch": ">=3.0"

@@ -1,11 +1,3 @@
-/*
- * @Author: your name
- * @Date: 2021-11-08 23:54:03
- * @LastEditTime: 2021-11-09 00:18:25
- * @LastEditors: your name
- * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
- * @FilePath: /sketch-plugin-demo/src/showWebview.js
- */
 import sketch from 'sketch';
 import BrowserWindow from 'sketch-module-web-view';
 import { getWebview } from 'sketch-module-web-view/remote';
@@ -13,19 +5,15 @@ import UI from 'sketch/ui';
 
 const webviewIdentifier = 'sketch-plugin-demo.webview'
 
-export default function () {
-  // console.log(sketch.getSelectedDocument());
+export default () => {
   const options = {
     identifier: webviewIdentifier,
-    title: 'Browser Window',
+    title: '登录',
     // x: 0,
     // y: 0,
-    width: 600,
-    height: 400,
-    resizable: true,
-    handlers: {
-      // plugin 和 webview 之间的通讯方法
-    }
+    width: 340,
+    height: 500,
+    resizable: true
   }
 
   const browserWindow = new BrowserWindow(options)
@@ -50,7 +38,12 @@ export default function () {
       .catch(console.error)
   })
 
-  browserWindow.loadURL(require('../resources/webview.html'))
+  // release
+  // browserWindow.loadURL(require('./dist/index.html'))
+
+  // dev
+  const Panel = `http://localhost:8000#${Math.random()}`;
+  browserWindow.loadURL(Panel)
 }
 
 // When the plugin is shutdown by Sketch (for example when the user disable the plugin)
@@ -61,3 +54,7 @@ export function onShutdown() {
     existingWebview.close()
   }
 }
+
+export function onOpenDocument() {
+
+};

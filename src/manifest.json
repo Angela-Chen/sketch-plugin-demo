@@ -2,7 +2,7 @@
   "compatibleVersion": 3,
   "bundleVersion": 1,
   "name": "sketch-plugin-demo",
-  "description": "sketch插件示例，包括sketch元素的操作、侧边工具栏、WebView等",
+  "description": "sketch插件示例，包括操作sketch元素、基于Umi+Antd开发WebView等",
   "author": "chenmenglan<1447340425@qq.com>",
   "commands": [
     {
@@ -53,20 +53,6 @@
           "Shutdown": "onShutdown"
         }
       }
-    },
-    {
-      "name": "显示Toolbar",
-      "identifier": "sketch-plugin-demo.show-toolbar",
-      "script": "./showToolbar.js",
-      "shortcut": "ctrl shift t",
-      "handlers": {
-        "run": "onRun",
-        "actions": {
-          "OpenDocument": "onOpenDocument",
-          "CloseDocument": "onCloseDocument",
-          "Shutdown": "onShutdown"
-        }
-      }
     }
   ],
   "menu": {
@@ -74,8 +60,7 @@
     "items": [
       "sketch-plugin-demo.get-selected-text",
       "sketch-plugin-demo.generate-random-color",
-      "sketch-plugin-demo.show-webview",
-      "sketch-plugin-demo.show-toolbar"
+      "sketch-plugin-demo.show-webview"
     ]
   }
 }

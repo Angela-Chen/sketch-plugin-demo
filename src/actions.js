@@ -1,7 +1,7 @@
 import UI from 'sketch/ui';
 
 export const onSelectionChanged = context => {
-  console.log(context);
+  // console.log(context);
 };
 
 export const onStartUp = () => {
