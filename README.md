@@ -1,10 +1,8 @@
 # sketch-plugin-demo
 
-## Installation
+## Sketch file for test
 
-- [Download](../../releases/latest/download/sketch-plugin-demo.sketchplugin.zip) the latest release of the plugin
-- Un-zip
-- Double-click on sketch-plugin-demo.sketchplugin
+`src/test-file/test.sketch`
 
 ## Development Guide
 

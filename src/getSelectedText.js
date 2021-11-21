@@ -17,7 +17,7 @@ const getTextValue = (layers) => {
 }
 // 用message提示信息的方式展示获取到的文本内容
 const print = () => {
-  UI.message('已选择的文本内容：' + strArray.toString()});
+  UI.message('已选择的文本内容：' + strArray.toString());
 }
 
 export default () => {
